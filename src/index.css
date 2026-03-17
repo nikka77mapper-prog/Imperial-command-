@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-[#1a3a5a] overflow-hidden;
+    background-image: 
+      radial-gradient(circle at 50% 50%, #2c5282 0%, #1a3a5a 100%);
+  }
+}
+
+@layer utilities {
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .paper-texture {
+    background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+  }
+
+  .realistic-panel {
+    @apply bg-[#1a1a1a]/95 backdrop-blur-md border border-[#3d2b1f] shadow-2xl text-stone-200;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.5), 0 10px 30px rgba(0,0,0,0.8);
+  }
+
+  .gold-outline {
+    stroke: #ffd700 !important;
+    stroke-width: 1.5px !important;
+  }
+
+  .flag-marker {
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));
+  }
+
+  .panel-header {
+    background: linear-gradient(to bottom, #2a1a1a, #1a1a1a);
+    border-bottom: 1px solid #3d2b1f;
+  }
+
+  .stat-icon {
+    @apply text-[#b8860b] w-4 h-4;
+  }
+
+  .compass-rose {
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+  }
+}
+
+.map-container {
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+}
+
+.water-texture {
+  fill: #0a1a2a;
+  background-image: radial-gradient(circle at 50% 50%, #0f2a3a 0%, #0a1a2a 100%);
+}
+
+.land-texture {
+  filter: contrast(1.1) brightness(0.9);
+}
